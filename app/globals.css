@@ -117,8 +117,7 @@ body {
   }
 
   #hero .body .content p:nth-of-type(2) {
-    @apply font-modern-negra text-6xl max-w-xl;
-    color: var(--color-yellow);
+    @apply font-modern-negra text-6xl max-w-xl text-yellow;
   }
 
   #her.body .content p:last-of-type {
@@ -134,11 +133,7 @@ body {
   }
 
   #hero .body .content .view-cocktails a {
-    @apply font-semibold opacity-80 2xl:text-start text-center;
-  }
-
-  #hero .body .content .view-cocktails a:hover {
-    color: var(--color-yellow);
+    @apply font-semibold opacity-80 2xl:text-start text-center hover:text-yellow;
   }
 
   video {

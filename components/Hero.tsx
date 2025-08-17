@@ -1,12 +1,50 @@
 'use client'
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { SplitText } from 'gsap/all'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
 
 const Hero = () => {
+   const videoRef = useRef<HTMLVideoElement | null>(null);
+   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+   useEffect(() => {
+      const video = videoRef.current;
+      if (!video) return;
+
+      const handleLoadedMetadata = () => {
+         const startValue = isMobile ? 'center 50%' : 'center 60%';
+         const endValue = isMobile ? '120% top' : 'bottom top';
+
+         const videoTimeline = gsap.timeline({
+            scrollTrigger: {
+               trigger: video,
+               start: startValue,
+               end: endValue,
+               pin: true,
+               scrub: true
+            }
+         });
+
+         videoTimeline.to(video, {
+            currentTime: video.duration
+         });
+      };
+
+      if (video.readyState >= 1) {
+         handleLoadedMetadata();
+      } else {
+         video.addEventListener('loadedmetadata', handleLoadedMetadata);
+      }
+
+      return () => {
+         video.removeEventListener('loadedmetadata', handleLoadedMetadata);
+      };
+   }, [isMobile]);
+
    useGSAP(() => {
       const heroSplit = new SplitText('.title', { type: 'chars, words' })
       const paragraphSplit = new SplitText('.subtitle', { type: 'lines' })
@@ -41,6 +79,7 @@ const Hero = () => {
          .to('.left-leaf', { y: -200 }, 0)
 
    }, [])
+
    return (
       <>
          <section id="hero" className='noisy'>
@@ -48,7 +87,7 @@ const Hero = () => {
 
             <Image src={"/images/hero-left-leaf.png"} alt='left-leaf' className='left-leaf' width={120} height={120} />
             <Image src={"/images/hero-right-leaf.png"} alt='right-leaf' className='right-leaf' width={120} height={120} />
-            <Image src={"/images/arrow.png"} alt='arrow' className='absolute md:right-20 md:top-1/3 bottom-12 right-1/2' width={20} height={80} />
+            <Image src={"/images/arrow.png"} alt='arrow' className='absolute md:right-20 md:top-1/3 bottom-12 right-1/2 h-auto w-auto' width={80} height={80} />
 
             <div className="body">
                <div className="content">
@@ -65,6 +104,15 @@ const Hero = () => {
                </div>
             </div>
          </section>
+         <div className='w-full md:h-4/5 h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover'>
+            <video
+               src="/videos/output.mp4"
+               muted
+               playsInline
+               preload='metadata'
+               ref={videoRef}
+            />
+         </div>
       </>
    )
 }
