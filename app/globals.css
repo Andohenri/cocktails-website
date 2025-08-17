@@ -12,7 +12,7 @@
 :root {
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
-  --font-sans: "Mona Sans", sans-serif;
+  --font-modern-negra: "Mona Sans", sans-serif;
   --font-modern-negra: "Modern Negra", sans-serif;
   --font-serif: "DM Serif Text", serif;
 }
@@ -246,7 +246,7 @@ body {
   }
 
   #art {
-    @apply flex justify-center items-center flex-col min-h-screen p-5 mt-20 relative;
+    @apply flex justify-center items-center flex-col min-h-dvh p-5 md:mt-20 relative;
     background: radial-gradient(
       circle at center,
       #434343 0%,
@@ -256,8 +256,7 @@ body {
   }
 
   #art h2 {
-    @apply relative md:text-[20vw] text-8xl whitespace-nowrap leading-none font-sans text-center mb-8;
-    color: #505050;
+    @apply relative md:text-[20vw] text-8xl whitespace-nowrap leading-none font-modern-negra text-center mb-8 text-[#505050];
   }
 
   #art .content {
@@ -269,7 +268,7 @@ body {
   }
 
   #art .masked-container h2 {
-    @apply text-4xl md:text-5xl font-sans text-center mb-10 text-white mt-32;
+    @apply text-4xl md:text-5xl font-modern-negra text-center mb-10 text-white mt-32;
   }
 
   #art .masked-container div {
@@ -277,7 +276,7 @@ body {
   }
 
   #art .masked-container div h3 {
-    @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
+    @apply md:text-5xl text-2xl text-center text-nowrap font-serif md:w-full w-80 text-white;
   }
 
   #art .masked-container div p {
@@ -307,12 +306,7 @@ body {
   }
 
   #menu .cocktail-tabs button {
-    @apply md:text-3xl text-xl pb-2 cursor-pointer border-b transition-colors font-sans;
-  }
-
-  #menu .cocktail-tabs button:hover {
-    color: var(--color-yellow);
-    border-color: var(--color-yellow);
+    @apply md:text-3xl text-xl pb-2 cursor-pointer border-b transition-colors font-modern-negra text-yellow border-yellow;
   }
 
   #menu .content {
@@ -324,15 +318,11 @@ body {
   }
 
   #menu .content .arrows button {
-    @apply text-white cursor-pointer transition-colors max-w-36;
-  }
-
-  #menu .content .arrows button:hover {
-    color: var(--color-yellow);
+    @apply text-white cursor-pointer transition-colors max-w-36 hover:text-yellow;
   }
 
   #menu .content .arrows button span {
-    @apply text-3xl font-sans leading-none hidden md:block;
+    @apply text-3xl font-modern-negra leading-none hidden md:block;
   }
 
   #menu .cocktail {
@@ -352,8 +342,7 @@ body {
   }
 
   #menu .recipe .info #title {
-    @apply font-sans md:text-6xl text-3xl max-w-40;
-    color: var(--color-yellow);
+    @apply font-modern-negra md:text-6xl text-3xl max-w-40 text-yellow;
   }
 
   #menu .recipe .details {
@@ -387,11 +376,11 @@ body {
   }
 
   #contact .content {
-    @apply container mx-auto lg:py-14 2xl:py-32 py-16 flex flex-col justify-between gap-10 min-h-screen;
+    @apply container mx-auto lg:py-14 2xl:py-32 py-16 flex flex-col justify-between gap-10 min-h-dvh;
   }
 
   #contact .content h2 {
-    @apply lg:text-6xl 2xl:text-8xl text-5xl font-sans md:translate-y-0 translate-y-5;
+    @apply lg:text-6xl 2xl:text-8xl text-5xl font-modern-negra md:translate-y-0 translate-y-5;
   }
 
   #contact .content h3 {
