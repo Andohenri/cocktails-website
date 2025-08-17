@@ -105,7 +105,7 @@ const storeInfo: { heading: string; address: string; contact: { phone: string; e
    address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
    contact: {
       phone: "(555) 987-6543",
-      email: "hello@jsmcocktail.com",
+      email: "andohenrirazafinatoandro@gmail.com",
    },
 };
 
