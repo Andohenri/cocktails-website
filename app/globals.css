@@ -77,7 +77,7 @@ body {
   }
 
   nav p {
-    @apply font-sans text-3xl -mb-2;
+    @apply font-modern-negra text-3xl -mb-2;
   }
 
   nav a {
@@ -93,11 +93,11 @@ body {
   }
 
   #hero {
-    @apply relative z-10 min-h-screen w-full border border-transparent;
+    @apply relative z-10 min-h-dvh w-full border border-transparent;
   }
 
   #hero h1 {
-    @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-sans;
+    @apply md:mt-32 mt-40 text-8xl md:text-[20vw] leading-none text-center font-modern-negra;
   }
 
   #hero .left-leaf {
@@ -117,25 +117,24 @@ body {
   }
 
   #hero .body .content p:nth-of-type(2) {
-    @apply font-sans text-6xl max-w-xl;
+    @apply font-modern-negra text-6xl max-w-xl;
     color: var(--color-yellow);
   }
 
-  #hero .body .content p:last-of-type {
+  #her.body .content p:last-of-type {
     @apply 2xl:text-start text-center;
   }
 
   #hero .body .content .view-cocktails {
-    @apply space-y-5 text-lg lg:max-w-xs md:max-w-xs w-full;
+    @apply space-y-5 text-lg lg:max-w-[25rem] md:max-w-xs w-full;
   }
 
-  #hero .body .content .view-cocktails p {
+  #hero.body .content .view-cocktails p {
     @apply text-left;
   }
 
   #hero .body .content .view-cocktails a {
     @apply font-semibold opacity-80 2xl:text-start text-center;
-    color: var(--color-yellow);
   }
 
   #hero .body .content .view-cocktails a:hover {
@@ -183,7 +182,7 @@ body {
   }
 
   #cocktails .list ul li h3 {
-    @apply font-sans 2xl:text-3xl text-xl;
+    @apply font-modern-negra 2xl:text-3xl text-xl;
     color: var(--color-yellow);
   }
 
