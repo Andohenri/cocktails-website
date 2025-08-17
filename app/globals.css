@@ -189,7 +189,7 @@ body {
   }
 
   #about {
-    @apply min-h-screen py-28 2xl:px-0 px-5 container mx-auto;
+    @apply min-h-dvh py-28 2xl:px-0 px-5 container mx-auto;
   }
 
   #about .content {
@@ -197,7 +197,7 @@ body {
   }
 
   #about .content h2 {
-    @apply text-5xl md:text-6xl font-sans max-w-lg;
+    @apply text-5xl md:text-6xl font-modern-negra max-w-lg;
   }
 
   #about .content .sub-content {
