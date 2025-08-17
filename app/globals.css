@@ -141,7 +141,7 @@ body {
   }
 
   #cocktails {
-    @apply relative min-h-screen w-full overflow-hidden;
+    @apply relative min-h-dvh w-full overflow-hidden;
   }
 
   #cocktails #c-left-leaf {
@@ -177,8 +177,7 @@ body {
   }
 
   #cocktails .list ul li h3 {
-    @apply font-modern-negra 2xl:text-3xl text-xl;
-    color: var(--color-yellow);
+    @apply font-modern-negra 2xl:text-3xl text-xl text-yellow;
   }
 
   #cocktails .list ul li p {

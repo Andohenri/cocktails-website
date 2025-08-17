@@ -25,7 +25,7 @@ const Hero = () => {
                start: startValue,
                end: endValue,
                pin: true,
-               scrub: true
+               scrub: true,
             }
          });
 
@@ -85,9 +85,9 @@ const Hero = () => {
          <section id="hero" className='noisy'>
             <h1 className='title'>MOJITO</h1>
 
-            <Image src={"/images/hero-left-leaf.png"} alt='left-leaf' className='left-leaf' width={120} height={120} />
-            <Image src={"/images/hero-right-leaf.png"} alt='right-leaf' className='right-leaf' width={120} height={120} />
-            <Image src={"/images/arrow.png"} alt='arrow' className='absolute md:right-20 md:top-1/3 bottom-12 right-1/2 h-auto w-auto' width={80} height={80} />
+            <Image src={"/images/hero-left-leaf.png"} alt='left-leaf' className='left-leaf' width={130} height={130} />
+            <Image src={"/images/hero-right-leaf.png"} alt='right-leaf' className='right-leaf' width={130} height={130} />
+            <Image src={"/images/arrow.png"} alt='arrow' className='absolute md:right-[15%] md:top-1/3 lg:top-1/2 bottom-12 right-1/2 h-auto w-auto' width={80} height={80} />
 
             <div className="body">
                <div className="content">
@@ -104,7 +104,7 @@ const Hero = () => {
                </div>
             </div>
          </section>
-         <div className='w-full md:h-4/5 h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover'>
+         <div className='video absolute inset-0'>
             <video
                src="/videos/output.mp4"
                muted
