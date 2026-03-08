@@ -102,9 +102,9 @@ const goodLists: string[] = [
 
 const storeInfo: { heading: string; address: string; contact: { phone: string; email: string } } = {
    heading: "Where to Find Us",
-   address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
+   address: "Fianarantsoa, Madagascar",
    contact: {
-      phone: "(555) 987-6543",
+      phone: "+ 261 34 97 562 46",
       email: "andohenrirazafinatoandro@gmail.com",
    },
 };
