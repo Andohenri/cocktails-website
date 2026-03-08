@@ -10,20 +10,27 @@ const Art = () => {
    const isMobile = useMediaQuery({ maxWidth: 767 });
    useGSAP(() => {
       const start = isMobile ? 'top 20%' : 'top top';
+
+      // Ensure deterministic states after hard reload or restored scroll position.
+      gsap.set('.will-fade', { opacity: 1 });
+      gsap.set('.masked-img', { scale: 1, maskPosition: 'center', maskSize: '50%' });
+      gsap.set('#masked-content', { opacity: 0 });
+
       const maskedTimeline = gsap.timeline({
          scrollTrigger: {
             trigger: '#art',
             start,
             end: 'bottom center',
             scrub: 1.5,
-            pin: true
+            pin: true,
+            invalidateOnRefresh: true
          }
       });
       maskedTimeline
-         .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut' })
-         .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut' })
+         .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut' }, 0)
+         .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut' }, 0)
          .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut' })
-   })
+   }, [isMobile])
    return (
       <section id='art'>
          <div className="container mx-auto h-full">
@@ -38,7 +45,7 @@ const Art = () => {
                   ))}
                </ul>
                <div className="cocktail-img">
-                  <Image src={"/images/under-img.jpg"} alt='check' className='abs-center masked-img size-full object-contain w-auto h-auto' width={2000} height={2000} />
+                  <Image src={"/images/under-img.jpg"} alt='check' className='abs-center masked-img h-full w-full object-contain' width={2000} height={2000} />
                </div>
                <ul className='space-y-4 will-fade'>
                   {featureLists.map((feature, idx) => (
